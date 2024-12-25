@@ -1,0 +1,111 @@
+﻿<Window x:Class="ticket2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ticket2"
+        mc:Ignorable="d"
+        Title="Конвентор расстояния, обьёма и веса" Height="346" Width="710"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF9E9E9E" Offset="1"/>
+            <GradientStop Color="White" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background> 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <RadioButton x:Name="rb_distance" Grid.Column="0" GroupName="type" Content="Расстояние" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rb_checked" FontFamily="Impact" BorderBrush="Black" Background="White">
+            <RadioButton.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7F7E7E" Offset="0"/>
+                </LinearGradientBrush>
+            </RadioButton.Foreground>
+        </RadioButton>
+        <RadioButton x:Name="rb_volume" Grid.Column="1" GroupName="type" Content="Объём" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rb_checked" FontFamily="Impact">
+            <RadioButton.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7F7E7E" Offset="0"/>
+                </LinearGradientBrush>
+            </RadioButton.Foreground>
+        </RadioButton>
+        <RadioButton x:Name="rb_weight" Grid.Column="2" GroupName="type" Content="Вес" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rb_checked" FontFamily="Impact">
+            <RadioButton.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7F7E7E" Offset="0"/>
+                </LinearGradientBrush>
+            </RadioButton.Foreground>
+        </RadioButton>
+        <RadioButton x:Name="rb_currency" Grid.Column="3" GroupName="type" Content="Валюта" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="rb_checked" FontFamily="Impact">
+            <RadioButton.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF7F7E7E" Offset="0"/>
+                </LinearGradientBrush>
+            </RadioButton.Foreground>
+        </RadioButton>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="cb_units1" Grid.Column="0" MaxWidth="150" MaxHeight="80" FontFamily="Impact" FontSize="18"/>
+            <TextBox x:Name="tb_input" Grid.Column="1" MaxWidth="150" MaxHeight="80" FontFamily="Impact" FontSize="18"/>
+            <TextBlock Grid.Column="2" Text="=" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Impact">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF4C4C4C" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <TextBox x:Name="tb_output" Grid.Column="3" MaxWidth="150" MaxHeight="80" FontFamily="Impact" FontSize="18"/>
+            <ComboBox x:Name="cb_units2" Grid.Column="4" MaxWidth="150" MaxHeight="80" FontFamily="Impact" BorderBrush="#FFD2D2D2" FontSize="18">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+        </Grid>
+
+        <Button x:Name="bt_convert" Grid.Row="2" Grid.ColumnSpan="4" MaxHeight="120" MaxWidth="780" Content="Конвертировать" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="bt_convert_Click" FontFamily="Impact" BorderThickness="25,36,25,25">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF565656" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB9B9B9" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF585858" Offset="1"/>
+                    <GradientStop Color="#FF9E9E9E" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+    </Grid>
+</Window>
